@@ -18,6 +18,30 @@
             return "scissors";
          }
         }
+
+        const playerSelection = prompt("Please enter rock, paper or scissors.").toLowerCase();
+
+        const computerSelection = getComputerChoice();
+
+        function playRound (playerSelection, computerSelection) {
+            if (playerSelection === computerSelection) {
+                return "Tie! Refresh this site to play again.";
+            } else if (playerSelection === "rock" && computerSelection === "paper") {
+                return "You Lose! Paper beats Rock.";
+            } else if (playerSelection === "paper" && computerSelection === "scissors") {
+                return "You Lose! Scissors beat Paper.";
+            } else if (playerSelection === "scissors" && computerSelection === "rock") {
+                return "You Lose! Rock beats Scissors.";
+            } else if (playerSelection === "rock" && computerSelection === "scissors") {
+                return "You win. Rock beats Scissors."
+            } else if (playerSelection === "paper" && computerSelection === "rock") {
+                return "You win. Paper beats rock."
+            } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                return "You win. Scissors beat paper."
+            } else {
+                return "Invalid player choice. Enter only rock, paper or scissors."
+            }
+        }
     </script>
 </body>
 </html>

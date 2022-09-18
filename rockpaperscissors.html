@@ -19,14 +19,11 @@
          }
         }
 
-        const playerSelection = prompt("Please enter rock, paper or scissors.").toLowerCase();
-
-        const computerSelection = getComputerChoice();
-
         function playRound (playerSelection, computerSelection) {
             if (playerSelection === computerSelection) {
-                return "Tie! Refresh this site to play again.";
+                return "Tie!";
             } else if (playerSelection === "rock" && computerSelection === "paper") {
+                score--;
                 return "You Lose! Paper beats Rock.";
             } else if (playerSelection === "paper" && computerSelection === "scissors") {
                 return "You Lose! Scissors beat Paper.";
@@ -42,6 +39,18 @@
                 return "Invalid player choice. Enter only rock, paper or scissors."
             }
         }
+
+        function game() {
+            let score = 0;
+            for (let i = 0; i < 5; i++) {
+                let playerSelection = prompt("Please enter rock, paper or scissors.").toLowerCase();
+                let computerSelection = getComputerChoice();
+                console.log(playRound(playerSelection, computerSelection));
+            }
+            console.log(score);
+        }
+
+        game()
     </script>
 </body>
 </html>

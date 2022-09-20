@@ -1,3 +1,9 @@
+const resultDiv = document.querySelector('#results');
+const results = document.createElement('div');
+const buttons = document.querySelectorAll('button');
+const playerScoreSpan = document.querySelector('#playerScore');
+const computerScoreSpan = document.querySelector('#computerScore');
+
 function getComputerChoice() {
     let choice = Math.random();
     if (choice < 0.33) {
@@ -11,6 +17,20 @@ function getComputerChoice() {
 
    let playerScore = 0;
    let computerScore = 0;
+   playerScoreSpan.textContent = (playerScore);
+   computerScoreSpan.textContent = (computerScore);
+
+   buttons.forEach(button => {
+    button.addEventListener('click', initializeRound)
+   })
+
+   function initializeRound (e) {
+    let playerSelection = this.id;
+    let computerSelection = getComputerChoice();
+    resultDiv.textContent = (playRound(playerSelection, computerSelection));
+    playerScoreSpan.textContent = (playerScore);
+    computerScoreSpan.textContent = (computerScore);
+   }
 
    function playRound (playerSelection, computerSelection) {
        if (playerSelection === computerSelection) {
@@ -39,10 +59,10 @@ function getComputerChoice() {
    }
 
    function game() {
-       for (let i = 0; i < 5; i++) {
+       for (let i = 0; i < 1; i++) {
            let playerSelection = prompt("Please enter rock, paper or scissors.").toLowerCase();
            let computerSelection = getComputerChoice();
-           console.log(playRound(playerSelection, computerSelection));
+           resultDiv.textContent = (playRound(playerSelection, computerSelection));
        }
        if (playerScore === 1) {
            console.log("You scored 1 point.")
@@ -62,5 +82,3 @@ function getComputerChoice() {
            console.log("The final result is a tie. Play again.")
        }
    }
-
-   game()

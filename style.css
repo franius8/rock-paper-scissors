@@ -1,20 +1,21 @@
 body {
-    background-color: hsl(193, 28%, 41%);
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
 h1 {
     margin: 0;
     font-size: 300%;
-    color: white;
     font-variant: small-caps;
 }
 
 .container {
-    border: 5px solid white;
+    border: 5px solid #e0f2fe;
+    background-color: #e0f2fe;
     border-radius: 10px;
     padding: 32px;
     margin: 16px;
@@ -31,6 +32,7 @@ h1 {
 #results {
     font-size: 200%;
     font-variant: bold;
+    height: 6rem;
 }
 
 #scores {
@@ -39,6 +41,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 48px;
+    font-size: 120%;
 }
 
 .buttondiv {
@@ -51,6 +54,7 @@ h1 {
 button {
     padding: 8px 24px;
     border-radius: 5px;
+    font-size: 130%;
     border: 3px solid blue;
     background-color: blue;
     color: white;
@@ -58,8 +62,8 @@ button {
 }
 
 button:hover {
-    background-color: lightblue;
+    background-color: rgb(0, 0, 140);
     border-radius: 5px;
-    border: 3px solid lightblue;
+    border: 3px solid rgb(0, 0, 140);
     cursor: pointer;
 }

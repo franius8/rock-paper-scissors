@@ -56,8 +56,6 @@ function getComputerChoice() {
        } else if (playerSelection === "scissors" && computerSelection === "paper") {
            playerScore++;
            return "You win. Scissors beat paper."
-       } else {
-           return "Invalid player choice. Enter only rock, paper or scissors."
        }
    }
 
